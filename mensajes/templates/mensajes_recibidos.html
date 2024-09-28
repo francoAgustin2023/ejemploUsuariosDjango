@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Mensajes recibidos{% endblock %}
+
+{% block header %}
+    <h1>Mensajes recibidos</h1>
+{% endblock %}
+
+{% block content %}
+    {% for mensaje in object_list %}
+    <li>{{ mensaje.remitente }}: {{ mensaje.contenido }} <a href="{%url 'eliminar_mensaje' mensaje.pk %}">Eliminar</a></li>
+    {% endfor %}
+{% endblock %}
